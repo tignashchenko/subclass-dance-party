@@ -24,15 +24,14 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
 
-.hulkDancer{
-  border:10px solid yellow;
-  border-radius:10px;
-  position:absolute;
+.spidermanDancer{
+  content: url('spiderman.gif');
+  height:25%;
+  width:25%;
 }
 .batmanDancer{
   border:10px solid green;
