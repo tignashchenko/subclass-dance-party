@@ -30,17 +30,17 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
   });
 
-  $('.addSuperHeroButton').on('click', function(event) {
+  $('.addHulkButton').on('click', function(event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    var superHeroDancer = new dancerMakerFunction(
+    var hulkDancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
       Math.random() * 5000
     );
-    $('body').append(superHeroDancer.$node);
+    $('body').append(hulkDancer.$node);
   });
 
   $('.addBatmanButton').on('click', function(event) {
