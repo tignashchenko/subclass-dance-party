@@ -35,12 +35,12 @@ $(document).ready(function() {
 
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    var dancer = new dancerMakerFunction(
+    var superHeroDancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 5000
     );
-    $('body').append(dancer.$node);
+    $('body').append(superHeroDancer.$node);
   });
 
   $('.addBatmanButton').on('click', function(event) {
@@ -48,11 +48,11 @@ $(document).ready(function() {
 
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    var dancer = new dancerMakerFunction(
+    var batmanDancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 7000
     );
-    $('body').append(dancer.$node);
+    $('body').append(batmanDancer.$node);
   });
 });

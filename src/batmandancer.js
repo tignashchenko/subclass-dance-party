@@ -1,11 +1,11 @@
 var makeBatmanDancer = function(top, left, timeBetweenSteps) {
-  this.oldStep = makeDancer.prototype.step;
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="batmanDancer"></span>');
+  this.$node.addClass('batmanDancer');
 };
 
 makeBatmanDancer.prototype = Object.create(makeDancer.prototype);
 makeBatmanDancer.prototype.constructor = makeBatmanDancer;
+makeBatmanDancer.prototype.oldStep = makeDancer.prototype.step;
 makeBatmanDancer.prototype.step = function() {
   this.oldStep();
   this.$node.toggle();
