@@ -1,6 +1,5 @@
 $(document).ready(function() {
   window.dancers = [];
-  console.log(window.dancers);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -29,40 +28,13 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     window.dancers.push(dancer);
-    console.log(dancer);
     $('body').append(dancer.$node);
   });
-/*
-  $('.addHulkButton').on('click', function(event) {
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
-    var dancerMakerFunction = window[dancerMakerFunctionName];
-
-    var hulkDancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
-      Math.random() * 1000
-    );
-    window.dancers.push(hulkDancer.$node);
-    $('body').append(hulkDancer.$node);
-  });
-
-  $('.addBatmanButton').on('click', function(event) {
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
-    var dancerMakerFunction = window[dancerMakerFunctionName];
-
-    var batmanDancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
-      $('body').width() * Math.random(),
-      Math.random() * 1000
-    );
-    window.dancers.push(batmanDancer.$node);
-    $('body').append(batmanDancer.$node);
-  });*/
 
   $('.lineUpDancersButton').on('click', function(event) {
     for (var index = 0; index < window.dancers.length; index++) {
+      window.dancers[index].$node[0].style.top = '500px';
+      window.dancers[index].$node[0].style.left = 150 + (index * 150) + 'px';
 
     }
   });

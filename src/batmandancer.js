@@ -8,5 +8,4 @@ makeBatmanDancer.prototype.constructor = makeBatmanDancer;
 makeBatmanDancer.prototype.oldStep = makeDancer.prototype.step;
 makeBatmanDancer.prototype.step = function() {
   this.oldStep();
-  this.$node.toggle();
 };
