@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  window.dancers = [];
+  window.dancers1 = [];
+  window.dancers2 = [];
+  window.dancers3 = [];
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -27,15 +29,40 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
-    window.dancers.push(dancer);
+    if (window.dancers1.length < 6 && window.dancers2.length === 0 && window.dancers3.length === 0) {
+      window.dancers1.push(dancer);
+    } else if (window.dancers1.length >= 6 && window.dancers2.length < 6 && window.dancers3.length === 0) {
+      window.dancers2.push(dancer);
+    } else if (window.dancers1.length >= 6 && window.dancers2.length >= 6 && window.dancers3.length < 6) {
+      window.dancers3.push(dancer);
+    } else if (window.dancers3.length >= 6) {
+      alert('THE DANCE FLOOR IS PACKED!!!');
+    }
     $('body').append(dancer.$node);
   });
 
   $('.lineUpDancersButton').on('click', function(event) {
-    for (var index = 0; index < window.dancers.length; index++) {
-      window.dancers[index].$node[0].style.top = '500px';
-      window.dancers[index].$node[0].style.left = 150 + (index * 150) + 'px';
-
+    if (window.dancers1.length < 6 && window.dancers2.length === 0 && window.dancers3.length === 0) {
+      for (let index = 0; index < window.dancers1.length; index++) {
+        window.dancers1[index].$node[0].style.top = '500px';
+        window.dancers1[index].$node[0].style.left = 150 + (index * 200) + 'px';
+        window.dancers1[index].$node[0].style.bottom = '50px';
+        window.dancers1[index].$node[0].style.right = 150 + (index * 200) + 'px';
+      }
+    } else if (window.dancers1.length >= 6 && window.dancers2.length < 6 && window.dancers3.length === 0) {
+      for (let index = 0; index < window.dancers2.length; index++) {
+        window.dancers2[index].$node[0].style.top = '550px';
+        window.dancers2[index].$node[0].style.left = 150 + (index * 200) + 'px';
+        window.dancers2[index].$node[0].style.bottom = '25px';
+        window.dancers2[index].$node[0].style.right = 150 + (index * 200) + 'px';
+      }
+    } else if (window.dancers1.length >= 6 && window.dancers2.length >= 6 && window.dancers3.length < 6) {
+      for (let index = 0; index < window.dancers3.length; index++) {
+        window.dancers3[index].$node[0].style.top = '600px';
+        window.dancers3[index].$node[0].style.left = 150 + (index * 200) + 'px';
+        window.dancers3[index].$node[0].style.bottom = '5px';
+        window.dancers3[index].$node[0].style.right = 150 + (index * 200) + 'px';
+      }
     }
   });
 });

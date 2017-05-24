@@ -2,6 +2,7 @@ body, html{
   height: 100%;
 }
 body{
+  overflow: hidden;
   margin: 0px;
   background-image:url('dance-floor.jpg');
   background-size: cover;
@@ -16,7 +17,15 @@ body, a:link, a:visited, a:active{
   padding: 5px 12px;
   float: right;
 }
+.lineUpDancersButton{
+  padding: 5px 12px;
+  float:right;
+}
 .topbar{
+  display: block;
+  float: right;
+  position: relative;
+  text-align: center;
   height: 32px;
   background-color: #555;
 }
@@ -26,8 +35,8 @@ body, a:link, a:visited, a:active{
 .dancer{
   border-radius: 10px;
   position: absolute;
+  display: inline-block;
 }
-
 .spidermanDancer{
   content: url('spiderman.gif');
   height: 25%;
